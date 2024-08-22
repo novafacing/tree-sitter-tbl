@@ -1,12 +1,12 @@
 [package]
-name = "tree-sitter-your-language-name"
-description = "YourLanguageName grammar for tree-sitter"
-version = "0.0.1"
-license = "MIT"
+name = "tree-sitter-tbl"
+description = "Linux .tbl grammar for tree-sitter"
+version = "0.1.0"
+license = "Apache-2.0"
 readme = "README.md"
-keywords = ["incremental", "parsing", "tree-sitter", "your-language-name"]
+keywords = ["incremental", "parsing", "tree-sitter", "tbl"]
 categories = ["parsing", "text-editors"]
-repository = "https://github.com/tree-sitter/tree-sitter-your-language-name"
+repository = "https://github.com/novafacing/tree-sitter-tbl"
 edition = "2021"
 autoexamples = false
 
