@@ -1,0 +1,36 @@
+[
+  {
+    "type": "Row",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Field",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "Table",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Row",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "Field",
+    "named": true
+  }
+]

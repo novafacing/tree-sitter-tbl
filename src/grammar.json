@@ -1,0 +1,133 @@
+{
+  "name": "tbl",
+  "rules": {
+    "Table": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "_Comment"
+                  },
+                  {
+                    "type": "PATTERN",
+                    "value": "\\r|\\r\\n|\\n"
+                  }
+                ]
+              },
+              {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "Row"
+                  },
+                  {
+                    "type": "PATTERN",
+                    "value": "\\r|\\r\\n|\\n"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "Row"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "Row": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_Separator"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "Field"
+            },
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "REPEAT",
+                    "content": {
+                      "type": "SYMBOL",
+                      "name": "_Separator"
+                    }
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "Field"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_Separator"
+              }
+            }
+          ]
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_Separator"
+          }
+        }
+      ]
+    },
+    "Field": {
+      "type": "PATTERN",
+      "value": "[^ \\t\\r\\n\\f#]\\S*"
+    },
+    "_Separator": {
+      "type": "PATTERN",
+      "value": "[ \\t\\f]"
+    },
+    "_Comment": {
+      "type": "PATTERN",
+      "value": "#.*"
+    }
+  },
+  "extras": [
+    {
+      "type": "PATTERN",
+      "value": "\\s"
+    }
+  ],
+  "conflicts": [],
+  "precedences": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": []
+}
